@@ -16,7 +16,8 @@ public class altTextAutomation {
 
   @BeforeMethod
 public void setup() {
-    WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().version("121.0.0.0").setup();
+
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--start-maximized");
     options.setBinary("/usr/bin/google-chrome"); // Replace with the actual path
