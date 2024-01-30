@@ -14,19 +14,18 @@ public class altTextAutomation {
 
     WebDriver driver;
 
-  @BeforeMethod
-public void setup() {
-    WebDriverManager.chromedriver().setup();
-
-       WebDriverManager.chromedriver().setup();
+    @BeforeMethod
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        // Corrected: Assign to the field, not a local variable
         driver = new ChromeDriver(options);
-        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-    
-}
+    }
 
     @Test
     public void myFunction() {
