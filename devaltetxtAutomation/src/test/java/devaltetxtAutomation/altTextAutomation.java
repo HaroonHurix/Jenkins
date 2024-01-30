@@ -16,7 +16,7 @@ public class altTextAutomation {
 
   @BeforeMethod
 public void setup() {
-    WebDriverManager.chromedriver().setup();z
+    WebDriverManager.chromedriver().setup();
 
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--start-maximized");
