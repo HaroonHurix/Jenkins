@@ -18,11 +18,12 @@ public class altTextAutomation {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-
-        // Corrected: Assign to the field, not a local variable
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        
+        // Initialize the class-level driver variable
         driver = new ChromeDriver(options);
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
