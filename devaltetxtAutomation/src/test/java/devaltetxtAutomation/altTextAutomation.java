@@ -18,12 +18,9 @@ public class altTextAutomation {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        
-        // Initialize the class-level driver variable
+        options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
-
+        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
