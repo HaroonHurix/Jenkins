@@ -18,10 +18,13 @@ public class altTextAutomation {
 public void setup() {
     WebDriverManager.chromedriver().setup();
 
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--start-maximized");
-    options.setBinary("/usr/bin/google-chrome"); // Replace with the actual path
-    driver = new ChromeDriver(options);
+       WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        driver = new ChromeDriver(options);
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     
 }
 
